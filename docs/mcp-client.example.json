@@ -1,0 +1,9 @@
+{
+  "description": "Replace every placeholder with an absolute local path. Remove --allow-write for read-only access. This example does not install anything.",
+  "mcpServers": {
+    "local_knowledge": {
+      "command": "<ABSOLUTE_PYTHON_EXECUTABLE>",
+      "args": ["<KNOWLEDGE_ROOT>/scripts/mcp_server.py", "--root", "<KNOWLEDGE_ROOT>", "--allow-write"]
+    }
+  }
+}

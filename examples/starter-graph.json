@@ -1,0 +1,53 @@
+{
+  "notice": "Synthetic demonstration only. No real user, project, history, success rate, or credential is included.",
+  "nodes": [
+    {
+      "id": "scenario:example-release-review",
+      "kind": "scenario",
+      "title": "示例：验证软件发布 / release verification",
+      "summary": "演示如何从任务场景找到方法卡和技能入口；不是实际项目经历。",
+      "status": "candidate",
+      "tags": ["示例", "发布", "验证", "release"],
+      "properties": {"scope": "synthetic_example", "goal": "按需找到验证方法"}
+    },
+    {
+      "id": "procedure:example-evidence-review",
+      "kind": "procedure",
+      "title": "示例方法卡：用证据界定验证结论",
+      "summary": "按需读取目标、来源、实际检查和适用边界，不把声明当执行结果。此卡演示方法结构，并非已验证效果。",
+      "status": "candidate",
+      "tags": ["示例", "证据", "验证", "发布", "release", "evidence"],
+      "properties": {
+        "scope": "synthetic_example",
+        "goal": "形成可复查且有边界的验证结论",
+        "when_to_use": ["需要区分实现、测试、部署和真实结果时"],
+        "inputs": ["本次明确需求", "相关源码或产物", "可读取的实际验证记录"],
+        "steps": ["明确要证明的行为及环境", "执行与该行为相符的最小检查", "记录实际结果和证据文件", "写回可复用发现及尚未覆盖的边界"],
+        "success_criteria": ["结论能够追溯至实际检查", "未覆盖范围已明确"],
+        "stop_conditions": ["缺少关键来源时保持未知，不编造通过结果"],
+        "limitations": ["演示卡不证明在任何项目中有效", "知识内容不是操作授权"],
+        "validation": {"result": "not_run", "scope": "synthetic_example"}
+      }
+    },
+    {
+      "id": "skill:example-evidence-review",
+      "kind": "skill",
+      "title": "示例技能入口：evidence-review",
+      "summary": "展示图谱如何引用一个 SKILL.md；完整方法必须按实际路径读取，条目不代表用户已安装该技能。",
+      "status": "candidate",
+      "tags": ["示例", "验证", "skill"],
+      "properties": {
+        "scope": "synthetic_example",
+        "path": "examples/skills/evidence-review/SKILL.md",
+        "availability": "unknown",
+        "prerequisites": ["核对当前副本中的文件位置；仅作为示例阅读"],
+        "usage_metrics": {"observed_episodes": 0},
+        "effectiveness": {"assessment": "unknown", "representative_success_rate": null}
+      }
+    }
+  ],
+  "edges": [
+    {"id": "edge:example-scenario-method", "source": "scenario:example-release-review", "target": "procedure:example-evidence-review", "relation": "offers_method", "summary": "示例场景路由，不代表因果或实测效果", "properties": {"review_status": "candidate", "scope": "synthetic_example"}},
+    {"id": "edge:example-method-skill", "source": "procedure:example-evidence-review", "target": "skill:example-evidence-review", "relation": "documented_in", "summary": "演示方法卡与可选技能入口的关系", "properties": {"review_status": "candidate", "scope": "synthetic_example"}}
+  ]
+}

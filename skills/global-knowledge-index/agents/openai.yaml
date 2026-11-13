@@ -1,0 +1,4 @@
+interface:
+  display_name: "全局能力与经验索引"
+  short_description: "按场景检索本机技能与项目经验，追溯效果证据并持续复核和写回知识"
+  default_prompt: "使用 $global-knowledge-index，为当前任务找到适用的方法和历史经验，并把有证据的新发现写回图谱。"

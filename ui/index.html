@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>能力与经验图谱 · AI Knowledge</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><div><span class="eyebrow">LOCAL · EVIDENCE · CONTINUITY</span><h1>能力与经验图谱</h1><p>找到可用方法，理解适用边界，让一次经验成为下一次能力。</p></div><div class="status"><i></i><span id="health">正在读取本地知识库</span></div></header>
+<section id="metrics" class="metrics" aria-label="统计概览"></section>
+<form id="searchForm" class="searchbar"><label for="query">检索任务、技能或经验</label><div class="searchrow"><input id="query" placeholder="例如：历史代码复盘、KEBA故障、PDF、部署验证" autocomplete="off"><select id="kind" aria-label="条目类型"><option value="">全部类型</option><option value="skill">技能能力</option><option value="scenario">任务场景</option><option value="procedure">方法卡 · 不必新建skill</option><option value="lesson">经验</option><option value="project">历史项目</option><option value="usage">使用证据</option><option value="skill_version">技能文件与版本</option><option value="constraint">环境约束</option></select><select id="outcome" aria-label="效果筛选"><option value="">全部效果状态</option><option value="verified_help">真实任务帮助案例</option><option value="mixed">混合结果</option><option value="failure">失败案例</option><option value="unknown">效果未知</option></select><button type="submit">搜索</button><button id="recommend" type="button" class="secondary">寻找候选方法</button></div><div class="options"><label><input id="inactive" type="checkbox">包含退役、争议和归档</label><span>相关性排序 ≠ 效果排名；未审查 ≠ 无效</span></div></form>
+<main>
+<aside><div class="panehead"><h2 id="resultsTitle">从场景进入</h2><span id="count"></span></div><div class="shortcuts"><button id="home" class="quiet">场景入口</button><button id="frequent" class="quiet">观察频率</button><button id="procedures" class="quiet">方法卡</button><button id="constraints" class="quiet">本机约束</button></div><div id="results" class="results"></div><button id="more" class="secondary more" hidden>下一页</button></aside>
+<article id="detail"><div class="empty"><div class="orb">◈</div><h2>按需理解，不必读完整座图谱</h2><p>选择一个场景或搜索具体任务。每次展开少量关系，沿“场景 → 能力 → 使用证据 → 项目 / 经验”追溯。</p><p>新知识先作为候选写入，再用可观察结果复核。</p></div></article>
+<section class="relations"><div class="panehead"><h2>关联展开</h2><span id="relationCount"></span></div><p class="hint">箭头表示存储方向；从任意一端都能追溯。</p><div id="relations"></div><button id="relationMore" class="secondary more" hidden>更多关联</button></section>
+</main>
+<footer><span>本地独立知识库 · 浏览器只读 · CLI / MCP 可受控写回</span><span id="revision"></span></footer>
+<script src="/app.js" defer></script></body></html>
