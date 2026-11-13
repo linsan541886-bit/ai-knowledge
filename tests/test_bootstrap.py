@@ -55,7 +55,9 @@ class BootstrapTests(unittest.TestCase):
                                      "--root", str(root)], capture_output=True,
                                     encoding="utf-8", env=env)
             self.assertEqual(result.returncode, 0, result.stderr)
-            self.assertEqual(json.loads(result.stdout)["root"], str(root))
+            # Windows CI may supply TEMP through an 8.3 alias (e.g. RUNNER~1).
+            # Verify the created directory's identity, not its spelling.
+            self.assertTrue(root.samefile(json.loads(result.stdout)["root"]))
             self.assertTrue(KnowledgeBase(root).health()["ok"])
 
     def test_explicit_inventory_build_report_without_history(self):
